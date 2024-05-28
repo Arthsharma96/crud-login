@@ -68,6 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     input[type="submit"]:hover {
       background-color: #0056b3;
     }
+    .container{
+
+    }
   </style>
 </head>
 <body>
@@ -85,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </select>
     <input name="register" type="submit" value="Register" />
   </form>
+  <a href='welcome.php'><u>Back to Welcome Page-></u></a>
 </body>
 </html>
 

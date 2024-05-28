@@ -72,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="register.php">Register</a>
         </section>
     </form>
+    <a href='welcome.php'><u>Back to Welcome Page-></u></a>
 </main>
 </body>
 </html>
