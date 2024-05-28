@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Check if the user is a teacher
-$is_teacher = isset($_SESSION['role']) && $_SESSION['role'] === 'teacher';
+$is_editor = isset($_SESSION['role']) && $_SESSION['role'] === 'editor';
 
 // Include the database connection file
 include 'db.php';
@@ -107,7 +107,7 @@ $result = $conn->query($sql);
                     </td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="User Actions">
-                            <?php if ($is_teacher): ?>
+                            <?php if ($is_editor): ?>
                                 <a href="update.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Edit</a>
                                 <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                             <?php endif; ?>
@@ -118,7 +118,7 @@ $result = $conn->query($sql);
         </tbody>
     </table>
     <!-- Link to add a new user, only visible to teachers -->
-    <?php if ($is_teacher): ?>
+    <?php if ($is_editor): ?>
         <a href="create.php" class="btn btn-primary">Add New User</a>
     <?php endif; ?>
 </div>
